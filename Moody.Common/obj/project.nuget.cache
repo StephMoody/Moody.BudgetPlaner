@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QQK67h0Fw9OhYp8voNFsIceqZgCT2ed8WWbrsD/mvgjh2CnzeWpiWW/o2236TNKLge3BoNgzdHjxeJg30SB82Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Steph\\RiderProjects\\Moody.BudgetPlaner\\Moody.Common\\Moody.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Steph\\.nuget\\packages\\jetbrains.annotations\\2022.1.0\\jetbrains.annotations.2022.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

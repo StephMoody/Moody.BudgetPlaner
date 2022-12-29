@@ -1,0 +1,12 @@
+C:\Users\Steph\RiderProjects\Moody.BudgetPlaner\Moody.Common\bin\Debug\net6.0\Moody.Common.deps.json
+C:\Users\Steph\RiderProjects\Moody.BudgetPlaner\Moody.Common\bin\Debug\net6.0\Moody.Common.dll
+C:\Users\Steph\RiderProjects\Moody.BudgetPlaner\Moody.Common\bin\Debug\net6.0\ref\Moody.Common.dll
+C:\Users\Steph\RiderProjects\Moody.BudgetPlaner\Moody.Common\bin\Debug\net6.0\Moody.Common.pdb
+C:\Users\Steph\RiderProjects\Moody.BudgetPlaner\Moody.Common\obj\Debug\net6.0\Moody.Common.csproj.AssemblyReference.cache
+C:\Users\Steph\RiderProjects\Moody.BudgetPlaner\Moody.Common\obj\Debug\net6.0\Moody.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Steph\RiderProjects\Moody.BudgetPlaner\Moody.Common\obj\Debug\net6.0\Moody.Common.AssemblyInfoInputs.cache
+C:\Users\Steph\RiderProjects\Moody.BudgetPlaner\Moody.Common\obj\Debug\net6.0\Moody.Common.AssemblyInfo.cs
+C:\Users\Steph\RiderProjects\Moody.BudgetPlaner\Moody.Common\obj\Debug\net6.0\Moody.Common.csproj.CoreCompileInputs.cache
+C:\Users\Steph\RiderProjects\Moody.BudgetPlaner\Moody.Common\obj\Debug\net6.0\Moody.Common.dll
+C:\Users\Steph\RiderProjects\Moody.BudgetPlaner\Moody.Common\obj\Debug\net6.0\ref\Moody.Common.dll
+C:\Users\Steph\RiderProjects\Moody.BudgetPlaner\Moody.Common\obj\Debug\net6.0\Moody.Common.pdb

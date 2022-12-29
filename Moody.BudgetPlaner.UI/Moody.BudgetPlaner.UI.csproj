@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="6.4.0" />
+      <PackageReference Include="JetBrains.Annotations" Version="2022.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Moody.BudgetPlaner.Model\Moody.BudgetPlaner.Model.csproj" />
+      <ProjectReference Include="..\Moody.UI\Moody.UI.csproj" />
+    </ItemGroup>
+
+</Project>
