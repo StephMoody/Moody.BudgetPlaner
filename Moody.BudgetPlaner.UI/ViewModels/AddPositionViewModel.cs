@@ -1,9 +1,12 @@
-﻿using Moody.UI.ViewModel;
+﻿using Moody.PropertyChangedSourceGenerator;
+using Moody.UI.ViewModel;
 
 namespace Moody.BudgetPlaner.UI.ViewModels;
 
-public class AddPositionViewModel : DialogViewModelBase
-{
+[ClassForGeneratePropertyChanged]
+public partial class AddPositionViewModel : DialogViewModelBase
+{ 
+    [GeneratePropertyChanged]
     private DateTime _dueDate;
     private string _designation;
     private double _amount;
@@ -13,18 +16,7 @@ public class AddPositionViewModel : DialogViewModelBase
         _amount = 0;
         _designation = "Position";
     }
-
-    public DateTime DueDate
-    {
-        get => _dueDate;
-        set
-        {
-            if (value.Equals(_dueDate)) return;
-            _dueDate = value;
-            OnPropertyChanged();
-        }
-    }
-
+    
     public string Designation
     {
         get => _designation;

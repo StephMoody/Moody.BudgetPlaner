@@ -1,9 +1,10 @@
 ﻿using Moody.BudgetPlaner.Model.Budget;
+using Moody.PropertyChangedSourceGenerator;
 using Moody.UI.ViewModel;
 
 namespace Moody.BudgetPlaner.UI.ViewModels;
 
-public class BudgetPositionViewModel : ViewModelBase
+public partial class BudgetPositionViewModel : ViewModelBase
 {
     private readonly IBudgetPosition _budgetPosition;
 

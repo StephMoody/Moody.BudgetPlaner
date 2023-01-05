@@ -5,11 +5,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:viewModels="clr-namespace:Moody.BudgetPlaner.UI.ViewModels"
         mc:Ignorable="d"
-        Title="AddPositionWindow" Height="450" Width="800"
+        Height="450" Width="800"
+        WindowStyle="None"
         DataContext="{x:Type viewModels:AddPositionViewModel}">
     <Window.Resources>
         <ResourceDictionary Source="../Resources/BudgetPlanerResources.xaml"></ResourceDictionary>
     </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding  Key="Escape" Command="{Binding CloseCommand}"> 
+        </KeyBinding>
+    </Window.InputBindings>
     <DockPanel>
             <ContentControl DockPanel.Dock="Top" ContentTemplate="{DynamicResource AddPositionWindowDataTemplate}" Content="{Binding}">
             </ContentControl>

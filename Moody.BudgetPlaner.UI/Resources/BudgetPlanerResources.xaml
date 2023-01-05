@@ -40,7 +40,7 @@
             <TextBox Grid.Row="2" Grid.Column="0" Text="Date"></TextBox>
             <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Designation}"></TextBox>
             <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Amount}"></TextBox>
-            <DatePicker Grid.Row="2" Grid.Column="1" SelectedDate="{Binding DueDate}"></DatePicker>
+            <DatePicker Grid.Row="2" Grid.Column="1" SelectedDate="{Binding dueDate}"></DatePicker>
             <Button Grid.Row="3" Grid.Column="1" Content="OK" Command="{Binding AcceptCommand}"></Button>
         </Grid>
     </DataTemplate>

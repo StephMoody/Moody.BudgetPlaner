@@ -12,13 +12,20 @@ public abstract class DialogViewModelBase : ViewModelBase
     {
         _closeCommand = closeCommand;
         AcceptCommand = new RelayCommand(OnAccept);
+        CloseCommand = new RelayCommand(OnClose);
     }
 
     public ICommand AcceptCommand { get; }
+
+    public ICommand CloseCommand { get; }
 
     protected virtual void OnAccept()
     {
         _closeCommand.Invoke();
     }
-        
+    
+    protected virtual void OnClose()
+    {
+        _closeCommand.Invoke();
+    }
 }

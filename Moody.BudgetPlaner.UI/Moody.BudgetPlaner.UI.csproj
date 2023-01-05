@@ -17,4 +17,8 @@
       <ProjectReference Include="..\Moody.UI\Moody.UI.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\Moody.PropertyChangedSourceGenerator\Moody.PropertyChangedSourceGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    </ItemGroup>
+
 </Project>
