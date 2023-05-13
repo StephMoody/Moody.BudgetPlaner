@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Moody.BudgetPlaner.Avalonia.UI.ViewModel"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Moody.BudgetPlaner.Avalonia.UI.View.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="Moody.BudgetPlaner.Avalonia.UI">
+    <Window.Resources>
+        <DataTemplate x:Key="BudgetPositionDataTemplate" x:DataType="vm:BudgetPositionViewModel">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Name}"></TextBlock>
+                <TextBlock Text="{Binding Amount}"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Monthly Income"></TextBlock>
+            <TextBox></TextBox>
+        </StackPanel>
+        <ItemsControl Items="{Binding PositionViewModels}"
+                      ItemTemplate="{DynamicResource BudgetPositionDataTemplate }">
+        </ItemsControl>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Balance"></TextBlock>
+            <TextBlock Text="{}"></TextBlock>
+        </StackPanel>
+    </StackPanel>
+</Window>

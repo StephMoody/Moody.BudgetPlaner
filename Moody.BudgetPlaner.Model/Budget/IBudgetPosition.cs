@@ -4,4 +4,6 @@ public interface IBudgetPosition
 {
     string Designation { get; }
     double Amount { get; }
+
+    int DueDay { get; }
 }

@@ -13,9 +13,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Moody.BudgetPlaner.UI\Moody.BudgetPlaner.UI.csproj" />
-      <ProjectReference Include="..\Moody.UI\Moody.UI.csproj" />
-      <ProjectReference Include="..\Moody.WpfSandBox\Moody.WpfSandBox.csproj" />
+      <ProjectReference Include="..\Moody.BudgetPlaner.Avalonia.UI\Moody.BudgetPlaner.Avalonia.UI.csproj" />
+      <ProjectReference Include="..\Moody.BudgetPlaner.Model\Moody.BudgetPlaner.Model.csproj" />
+      <ProjectReference Include="..\Moody.Common\Moody.Common.csproj" />
     </ItemGroup>
 
 </Project>

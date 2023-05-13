@@ -6,14 +6,15 @@ namespace Moody.BudgetPlaner.UI.ViewModels;
 [ClassForGeneratePropertyChanged]
 public partial class AddPositionViewModel : DialogViewModelBase
 { 
-    [GeneratePropertyChanged]
     private DateTime _dueDate;
     private string _designation;
     private double _amount;
+    private int _dueDay;
 
     public AddPositionViewModel(Action closeCommand) : base(closeCommand)
     {
         _amount = 0;
+        _dueDate = DateTime.Today;
         _designation = "Position";
     }
     
@@ -25,6 +26,17 @@ public partial class AddPositionViewModel : DialogViewModelBase
             if (value == _designation) 
                 return;
             _designation = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public int DueDay
+    {
+        get => _dueDay;
+        set
+        {
+            if (value == _dueDay) return;
+            _dueDay = value;
             OnPropertyChanged();
         }
     }

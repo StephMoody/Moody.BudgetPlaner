@@ -5,7 +5,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         mc:Ignorable="d"
         WindowStyle="None"
-        Height="450" Width="800">
+        FontFamily="Comic Sans MS"
+        SizeToContent="WidthAndHeight">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -13,10 +14,6 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
-        <DockPanel>
-            <ContentControl DockPanel.Dock="Top" ContentTemplate="{DynamicResource BudgetPlanerMainViewModelDataTemplate}" Content="{Binding}">
+            <ContentControl ContentTemplate="{DynamicResource BudgetPlanerMainViewModelDataTemplate}" Content="{Binding}">
             </ContentControl>
-        </DockPanel>
-    </Grid>
 </Window>

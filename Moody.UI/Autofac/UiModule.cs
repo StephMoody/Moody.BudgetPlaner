@@ -13,6 +13,7 @@ public class UiModule : Module
         builder.RegisterType<DispatcherProvider>().As<IDispatcherProvider>().As<IInitializable>().SingleInstance();
         builder.RegisterType<WindowHost>().As<IWindowHost>().SingleInstance();
         builder.RegisterType<AsyncCommand>().AsSelf().InstancePerDependency();
+        builder.RegisterType<AsyncCommandFactory>().As<IAsyncCommandFactory>().AsSelf().SingleInstance();
         base.Load(builder);
     }
 }

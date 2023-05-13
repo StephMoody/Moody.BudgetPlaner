@@ -5,8 +5,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:viewModels="clr-namespace:Moody.BudgetPlaner.UI.ViewModels"
         mc:Ignorable="d"
-        Height="450" Width="800"
-        WindowStyle="None"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        SizeToContent="WidthAndHeight"
         DataContext="{x:Type viewModels:AddPositionViewModel}">
     <Window.Resources>
         <ResourceDictionary Source="../Resources/BudgetPlanerResources.xaml"></ResourceDictionary>

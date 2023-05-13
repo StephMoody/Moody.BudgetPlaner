@@ -1,7 +1,6 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
-namespace Moody.UI.Command;
+namespace Moody.Avalonia.UI.Command;
 
 public class RelayCommand : ICommand
 {

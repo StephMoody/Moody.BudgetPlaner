@@ -1,4 +1,5 @@
-﻿using Moody.UI.ViewModel;
+﻿using Moody.Avalonia.UI.ViewModel;
+using Moody.UI.ViewModel;
 
 namespace Moody.BudgetPlaner.UI.ViewModels;
 

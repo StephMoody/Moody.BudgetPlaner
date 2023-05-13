@@ -7,47 +7,32 @@
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/materialdesigntheme.datepicker.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <DataTemplate x:Key="BudgetPlanerMainViewModelDataTemplate" DataType= "{x:Type viewModels:BudgetPlanerViewModel}">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="25"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="25"></RowDefinition>
-                <RowDefinition Height="25"></RowDefinition>
-            </Grid.RowDefinitions>
-            
-            <ContentControl Grid.Row="0" DockPanel.Dock="Top" ContentTemplate="{DynamicResource IncomeDataTemplate}" Content="{Binding IncomeViewModel}">
-            </ContentControl>
-            <ItemsControl Grid.Row="1" DockPanel.Dock="Top" 
-                          HorizontalAlignment="Left" 
-                          ItemsSource="{Binding BudgetPositionViewModels}"
-                          ItemTemplate="{DynamicResource BudgetPositionDataTemplate }">
-            </ItemsControl>
-            <TextBox Grid.Row="2" Style="{StaticResource MaterialDesignTextBox}" Text="{Binding Balance, Mode=OneWay}"></TextBox>
-            <Button Grid.Row="3" Style="{StaticResource MaterialDesignToolButton}"
-                    Command="{Binding AddCommand}" Height="30" Width="100" Content="Add" DockPanel.Dock="Top" HorizontalAlignment="Left"></Button>
-        </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="*" > </RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                </Grid.RowDefinitions>
+                <ContentControl Grid.Row="0" ContentTemplate="{DynamicResource IncomeDataTemplate}" Content="{Binding IncomeViewModel}"></ContentControl>
+                    <ItemsControl Grid.Row="1"
+                                  HorizontalAlignment="Left"
+                                  ItemsSource="{Binding BudgetPositionViewModels}"
+                                  ItemTemplate="{DynamicResource BudgetPositionDataTemplate }">
+                    </ItemsControl>
+                    <TextBox Grid.Row="2" Style="{StaticResource MaterialDesignTextBox}" Text="{Binding Balance, Mode=OneWay}"></TextBox>
+                <Button Grid.Row="3"  Style="{StaticResource MaterialDesignToolButton}"
+                        Command="{Binding AddCommand}" Height="30" Content="Add" HorizontalAlignment="Right"></Button>
+            </Grid>
     </DataTemplate>
     
     <DataTemplate x:Key="AddPositionWindowDataTemplate" DataType="{x:Type viewModels:AddPositionViewModel}">
-        <Grid Margin="5,5,5,5">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"></RowDefinition>
-                <RowDefinition Height="30"></RowDefinition>
-                <RowDefinition Height="30"></RowDefinition>
-                <RowDefinition Height="30"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"></ColumnDefinition>
-                <ColumnDefinition Width="150"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <TextBox Grid.Row="0" Grid.Column="0" Text="Designation" Style="{StaticResource MaterialDesignTextBox}"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="0" Text="Amount" Style="{StaticResource MaterialDesignTextBox}"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="0" Text="Date" Style="{StaticResource MaterialDesignTextBox}"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Designation}" Style="{StaticResource MaterialDesignTextBox}"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Amount}" Style="{StaticResource MaterialDesignTextBox}"></TextBox>
-            <DatePicker Grid.Row="2" Grid.Column="1" SelectedDate="{Binding dueDate}" Style="{StaticResource MaterialDesignDatePicker}"></DatePicker>
-            <Button Grid.Row="3" Grid.Column="1" Content="OK" Command="{Binding AcceptCommand}" Style="{StaticResource MaterialDesignToolButton}"></Button>
-        </Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBox Margin="5,5,5,1" Width="300" Text="{Binding Designation}"  Style="{StaticResource MaterialDesignTextBox}"  x:Name="SearchTermTextBox"></TextBox>
+            <TextBox  Margin="5,1,5,1" Width="300" Text="{Binding Amount}" Style="{StaticResource MaterialDesignTextBox}"></TextBox>
+            <TextBox Margin="5,1,5,1" Width="300" Text="{Binding DueDay}" Style="{StaticResource MaterialDesignTextBox}"></TextBox>
+            <Button Margin="5,1,5,5" Content="OK" HorizontalAlignment="Right" Command="{Binding AcceptCommand}" Style="{StaticResource MaterialDesignToolButton}"></Button>
+        </StackPanel>
     </DataTemplate>
     
     <DataTemplate x:Key="IncomeDataTemplate" DataType="{x:Type viewModels:IncomeViewModel}">
@@ -61,6 +46,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBox Text="{Binding Designation, Mode=OneWay}" Style="{DynamicResource MaterialDesignHeadline6TextBlock}"> </TextBox>
             <TextBox Text="{Binding Amount, Mode=OneWay}" Style="{DynamicResource MaterialDesignHeadline6TextBlock}"> </TextBox>
+            <Button Command="{Binding RequestDeleteCommand}" Content="X"></Button>
         </StackPanel>
     </DataTemplate>
 </ResourceDictionary>
