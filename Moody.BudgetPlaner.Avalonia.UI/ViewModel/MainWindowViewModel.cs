@@ -1,5 +1,5 @@
 ﻿using System.Collections.ObjectModel;
-using Moody.Avalonia.UI.ViewModel;
+using Moody.Common.UI.ViewModel;
 
 namespace Moody.BudgetPlaner.Avalonia.UI.ViewModel;
 

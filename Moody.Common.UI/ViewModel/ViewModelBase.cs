@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Moody.Avalonia.UI.ViewModel;
+namespace Moody.Common.UI.ViewModel;
 
 public abstract class ViewModelBase : INotifyPropertyChanged, IDisposable
 {

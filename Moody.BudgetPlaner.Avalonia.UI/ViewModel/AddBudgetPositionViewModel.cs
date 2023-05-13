@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
-using Moody.Avalonia.UI.Command;
-using Moody.Avalonia.UI.ViewModel;
+using Moody.Common.UI.Command;
+using Moody.Common.UI.ViewModel;
 
 namespace Moody.BudgetPlaner.Avalonia.UI.ViewModel;
 
