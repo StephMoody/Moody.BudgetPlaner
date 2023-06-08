@@ -1,4 +1,4 @@
-﻿namespace Moody.BudgetPlaner.Avalonia.UI.ViewModel;
+﻿namespace Moody.BudgetPlaner.Avalonia.UI.ViewModel.PositionManagement;
 
 public class AddBudgetPositionEventArgs : EventArgs
 {

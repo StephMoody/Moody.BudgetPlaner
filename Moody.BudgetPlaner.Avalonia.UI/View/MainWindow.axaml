@@ -3,10 +3,17 @@
         xmlns:vm="using:Moody.BudgetPlaner.Avalonia.UI.ViewModel"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
         x:Class="Moody.BudgetPlaner.Avalonia.UI.View.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Title="Moody.BudgetPlaner.Avalonia.UI">
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaTitleBarHeightHint="-1"
+        Title="Moody.BudgetPlaner.Avalonia.UI"
+        CanResize="False"
+        SizeToContent="WidthAndHeight">
     <Window.Resources>
         <DataTemplate x:Key="BudgetPositionDataTemplate" x:DataType="vm:BudgetPositionViewModel">
             <StackPanel Orientation="Horizontal">
@@ -15,20 +22,49 @@
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
+    <Window.Styles>
+        <Style Selector="Border.Content">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="White"></Setter>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style Selector="Button">
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
+        </Style>
+        <Style Selector="StackPanel">
+            <Setter Property="Margin" Value="10, 5"/>
+        </Style>
+        
+    </Window.Styles>
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-    <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Monthly Income"></TextBlock>
-            <TextBox></TextBox>
+        
+    
+    <DockPanel LastChildFill="True">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" DockPanel.Dock="Top">
+            <Border Classes="Content">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Monthly Income:"></TextBlock>
+                    <TextBox Text="{Binding IncomeViewModel.Income}"></TextBox>
+                </StackPanel>
+            </Border>
+            <Border Classes="Content">
+                <ItemsControl Items="{Binding PositionManagementViewModel.PositionViewModels}"
+                              ItemTemplate="{DynamicResource BudgetPositionDataTemplate }">
+                </ItemsControl>
+            </Border>
+            <Border Classes="Content">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Balance"></TextBlock>
+                    <TextBlock Text="{}"></TextBlock>
+                </StackPanel>
+            </Border>
         </StackPanel>
-        <ItemsControl Items="{Binding PositionViewModels}"
-                      ItemTemplate="{DynamicResource BudgetPositionDataTemplate }">
-        </ItemsControl>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Balance"></TextBlock>
-            <TextBlock Text="{}"></TextBlock>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" DockPanel.Dock="Bottom">
+            <Button Margin="5" Content="Close" Command="{Binding CloseCommand}"/>
         </StackPanel>
-    </StackPanel>
+    </DockPanel>
 </Window>

@@ -1,38 +1,26 @@
 ﻿using System.Collections.ObjectModel;
+using Moody.BudgetPlaner.Avalonia.UI.ViewModel.IncomeManagement;
+using Moody.BudgetPlaner.Avalonia.UI.ViewModel.PositionManagement;
+using Moody.Common.Contracts;
 using Moody.Common.UI.ViewModel;
 
 namespace Moody.BudgetPlaner.Avalonia.UI.ViewModel;
 
-public class MainWindowViewModel : ViewModelBase
+public class MainWindowViewModel : CloseableWindowViewModelBase
 {
-    public MainWindowViewModel(AddBudgetPositionViewModel addBudgetPositionViewModel)
+    public MainWindowViewModel(ILogger logger, PositionManagementViewModel positionManagementViewModel, IncomeViewModel incomeViewModel) : base(logger)
     {
-        AddBudgetPositionViewModel = addBudgetPositionViewModel;
-        AddBudgetPositionViewModel.PositionAdded += AddBudgetPositionViewModelOnPositionAdded;
+        PositionManagementViewModel = positionManagementViewModel;
+        IncomeViewModel = incomeViewModel;
     }
 
-    public ObservableCollection<BudgetPositionViewModel> PositionViewModels { get; } = new()
-    {
-        new BudgetPositionViewModel(){Name = "Test", Amount = 200d}
-    };
+    public PositionManagementViewModel PositionManagementViewModel { get; }
 
-    public AddBudgetPositionViewModel AddBudgetPositionViewModel { get; }
+    public IncomeViewModel IncomeViewModel { get; }
 
     protected override void OnDispose()
     {
-        AddBudgetPositionViewModel.PositionAdded -= AddBudgetPositionViewModelOnPositionAdded;
+        PositionManagementViewModel.Dispose();
         base.OnDispose();
-    }
-
-    private void AddBudgetPositionViewModelOnPositionAdded(object? sender, AddBudgetPositionEventArgs e)
-    {
-        try
-        {
-            PositionViewModels.Add(e.AddedBudgetPositionViewModel);
-        }
-        catch (Exception exception)
-        {
-            Console.WriteLine(exception);
-        }
     }
 }

@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Moody.Common\Moody.Common.csproj" />
+    </ItemGroup>
+
 </Project>

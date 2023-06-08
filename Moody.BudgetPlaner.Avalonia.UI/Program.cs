@@ -14,7 +14,7 @@ public class Program
             .LogToTrace()
             .UseReactiveUI();
 
-        appBuilder.StartWithClassicDesktopLifetime(Array.Empty<string>(), container);
+        appBuilder.StartWithClassicDesktopLifetime(Array.Empty<string>(), container); 
         return Task.CompletedTask;
     }
 }

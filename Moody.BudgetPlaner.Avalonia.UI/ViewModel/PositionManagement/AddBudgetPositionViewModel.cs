@@ -2,7 +2,7 @@
 using Moody.Common.UI.Command;
 using Moody.Common.UI.ViewModel;
 
-namespace Moody.BudgetPlaner.Avalonia.UI.ViewModel;
+namespace Moody.BudgetPlaner.Avalonia.UI.ViewModel.PositionManagement;
 
 public class AddBudgetPositionViewModel : ViewModelBase
 {
