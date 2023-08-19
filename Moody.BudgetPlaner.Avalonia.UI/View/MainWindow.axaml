@@ -23,7 +23,7 @@
         </DataTemplate>
     </Window.Resources>
     <Window.Styles>
-        <Style Selector="Border.Content">
+        <Style Selector="Border.BorderContent">
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="BorderBrush" Value="White"></Setter>
             <Setter Property="Padding" Value="5"/>
@@ -51,12 +51,12 @@
                     <TextBox Text="{Binding IncomeViewModel.Income}"></TextBox>
                 </StackPanel>
             </Border>
-            <Border Classes="Content">
+            <Border Classes="BorderContent">
                 <ItemsControl Items="{Binding PositionManagementViewModel.PositionViewModels}"
                               ItemTemplate="{DynamicResource BudgetPositionDataTemplate }">
                 </ItemsControl>
             </Border>
-            <Border Classes="Content">
+            <Border Classes="BorderContent">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Balance"></TextBlock>
                     <TextBlock Text="{}"></TextBlock>
