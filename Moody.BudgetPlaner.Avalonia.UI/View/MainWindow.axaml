@@ -15,12 +15,11 @@
         CanResize="False"
         SizeToContent="WidthAndHeight">
     <Window.Resources>
-        <DataTemplate x:Key="BudgetPositionDataTemplate" x:DataType="vm:BudgetPositionViewModel">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding Name}"></TextBlock>
-                <TextBlock Text="{Binding Amount}"></TextBlock>
-            </StackPanel>
-        </DataTemplate>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="/Resources/MainWindowResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
     <Window.Styles>
         <Style Selector="Border.BorderContent">
@@ -45,7 +44,7 @@
     
     <DockPanel LastChildFill="True">
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" DockPanel.Dock="Top">
-            <Border Classes="Content">
+            <Border Classes="BorderContent">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Monthly Income:"></TextBlock>
                     <TextBox Text="{Binding IncomeViewModel.Income}"></TextBox>

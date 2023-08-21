@@ -25,6 +25,10 @@
         <PackageReference Include="Autofac" Version="6.4.0" />
         <PackageReference Include="JetBrains.Annotations" Version="2022.1.0" />
     </ItemGroup>
+
+    <ItemGroup>
+        <AvaloniaResource Include="Resources\MainWindowResources.xaml"/>
+    </ItemGroup>
     
     <ItemGroup>
         <PackageReference Include="Avalonia" Version="0.10.18" />
@@ -39,5 +43,6 @@
       <ProjectReference Include="..\Moody.Avalonia.UI\Moody.Avalonia.UI.csproj" />
       <ProjectReference Include="..\Moody.Common.UI\Moody.Common.UI.csproj" />
     </ItemGroup>
+
 
 </Project>

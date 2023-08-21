@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="using:Moody.BudgetPlaner.Avalonia.UI.ViewModel">
+    <DataTemplate x:Key="BudgetPositionDataTemplate" x:DataType="vm:BudgetPositionViewModel">
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding Name}"></TextBox>
+            <TextBox Text="{Binding Amount}"></TextBox>
+            <Button Content="Remove" Command="{Binding RemoveCommand}"/>
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>

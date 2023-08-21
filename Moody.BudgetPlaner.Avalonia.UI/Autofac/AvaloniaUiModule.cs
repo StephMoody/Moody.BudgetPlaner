@@ -9,9 +9,10 @@ public class AvaloniaUiModule : Module
 {
     protected override void Load(ContainerBuilder builder)
     {
-        builder.RegisterType<AddBudgetPositionViewModel>().AsSelf();
         builder.RegisterType<PositionManagementViewModel>().AsSelf();
+        builder.RegisterType<BudgetPositionViewModel>().InstancePerDependency();
         builder.RegisterType<IncomeViewModel>().AsSelf();
         builder.RegisterType<MainWindowViewModel>().AsSelf();
     }
+    
 }
